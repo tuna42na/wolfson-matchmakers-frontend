@@ -1,10 +1,12 @@
 import React from "react";
-import { hot } from "react-hot-loader";
+// import { hot } from "react-hot-loader";
+import Quiz from "./components/quiz";
+import "antd/dist/antd.css";
 
 class App extends React.Component {
   render() {
-    return <h1>Well would ya look at that?!</h1>;
+    return <Quiz />;
   }
 }
 
-export default hot(module)(App);
+export default App;

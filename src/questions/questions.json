@@ -1,0 +1,32 @@
+[
+  {
+    "id": "0",
+    "question": "What is your favorite show to watch on Netflix?",
+    "answers": [
+      "Stranger Things",
+      "On My Block",
+      "The Office",
+      "I don’t watch Netflix"
+    ]
+  },
+  {
+    "id": "1",
+    "question": "What is your favorite school break?",
+    "answers": [
+      "Winter Break",
+      "Spring Break",
+      "Thanksgiving Break",
+      "None—I hate not having school!"
+    ]
+  },
+  {
+    "id": "2",
+    "question": "If you could go anywhere on vacation, where would you visit?",
+    "answers": [
+      "Winter Break",
+      "Spring Break",
+      "Thanksgiving Break",
+      "None—I hate not having school!"
+    ]
+  }
+]
