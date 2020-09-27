@@ -8,3 +8,10 @@ header {
   width: 75%;
   margin: auto;
 }
+.quizBody {
+  width: 75%;
+  margin: auto;
+  height: 100vh;
+  padding: 10px;
+  background-color: tomato;
+}
