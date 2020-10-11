@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import Answers from "./answers";
+import WolfsonHeader from "./header";
 import axios from "axios";
-import { Radio } from "antd";
+import { Button } from "@chakra-ui/core";
 
 const Quiz = () => {
   let [questions, setQuestions] = useState();
@@ -26,21 +27,31 @@ const Quiz = () => {
   };
 
   return (
-    <div className="quizBody">
-      {questions ? (
-        <>
-          <h2>{questions[number].question}</h2>
-          <ul>
-            {questions[number].answers.map((item) => (
-              <li>{item}</li>
-            ))}
-          </ul>
-          <button onClick={prevQuestion}> Previous Question </button>
-          <button onClick={nextQuestion}> Next Question </button>
-        </>
-      ) : (
-        "Loading..."
-      )}
+    <div>
+      <WolfsonHeader />
+      <div className="quizBody">
+        {questions ? (
+          <>
+            <h2>{questions[number].question}</h2>
+            <div>
+              {questions[number].answers.map((item, i) => (
+                <>
+                  <button key={i}> {item} </button>
+                </>
+              ))}
+            </div>
+            <button type="text" onClick={prevQuestion}>
+              Previous Question
+            </button>{" "}
+            <button type="text" onClick={nextQuestion}>
+              Next Question
+            </button>
+          </>
+        ) : (
+          "Loading..."
+        )}
+        {/* <Button> Chakra Test </Button> */}
+      </div>
     </div>
   );
 };

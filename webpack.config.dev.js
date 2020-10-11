@@ -5,6 +5,7 @@ module.exports = merge(baseConfig, {
   mode: "development",
   devServer: {
     port: 6969,
+    historyApiFallback: true,
   },
   devtool: "source-map",
 });

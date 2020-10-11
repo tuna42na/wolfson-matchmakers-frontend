@@ -4,14 +4,35 @@ header {
   color: white;
   background-color: tomato;
 }
+
 .container {
   width: 75%;
   margin: auto;
 }
+
+/* Homepage */
+.homepage {
+  height: 100vh;
+  padding: 10px;
+  background-color: coral;
+}
+.homepage-content {
+  position: relative;
+  text-align: center;
+  top: 50%;
+}
+.homepage-header {
+  font-size: 70px;
+}
+.login-button {
+  float: right;
+  margin: 10px;
+}
+
 .quizBody {
   width: 75%;
   margin: auto;
-  height: 100vh;
+  min-height: 40vh;
   padding: 10px;
   background-color: tomato;
 }

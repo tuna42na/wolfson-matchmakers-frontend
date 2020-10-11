@@ -1,4 +1,4 @@
-# React Boilerplate
+# Wolfson Matchmaker's App
 
 Features
 *Babel Library Dependancies

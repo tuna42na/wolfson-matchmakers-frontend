@@ -23,10 +23,35 @@
     "id": "2",
     "question": "If you could go anywhere on vacation, where would you visit?",
     "answers": [
-      "Winter Break",
-      "Spring Break",
-      "Thanksgiving Break",
-      "None—I hate not having school!"
+      "A historical landmark",
+      "The mountains",
+      "The beach",
+      "I would rather stay home"
     ]
+  },
+  {
+    "id": "3",
+    "question": "What is your preferred method for completing Achieve 3000 activities each quarter?",
+    "answers": [
+      "I do two a week until they are all complete",
+      "I do one the first week of the quarter and the rest at the end of the quarter",
+      "I wait until the very last minute",
+      "What Achieve 3000 activities?"
+    ]
+  },
+  {
+    "id": "4",
+    "question": "What do you find least attractive in a person?",
+    "answers": ["Bad manners", "Bad hygiene", "Overconfidence", "Laziness"]
+  },
+  {
+    "id": "5",
+    "question": "What is your favorite clothing accessory?",
+    "answers": ["Hats", "Shoes", "Socks", "Scarves"]
+  },
+  {
+    "id": "6",
+    "question": "What is the best hotdog topping?",
+    "answers": ["Ketchup", "Mustard", "Other", "None"]
   }
 ]

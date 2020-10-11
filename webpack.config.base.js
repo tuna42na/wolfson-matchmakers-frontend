@@ -41,6 +41,17 @@ module.exports = {
         use: ["style-loader", "css-loader"],
         exclude: /node-modules/,
       },
+      {
+        test: /\.ttf$/,
+        use: [
+          {
+            loader: "ttf-loader",
+            options: {
+              name: "./font/[hash].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
   plugins: [new HtmlWebpackPlugin({ template: "./src/index.html" })],
