@@ -1,1 +1,2 @@
 export const SET_QUESTION_NUMBER = "SET_QUESTION_NUMBER";
+export const SET_TAKER_NAME = "SET_TAKER_NAME ";

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from "react";
 import WolfsonHeader from "./header";
 import axios from "axios";
-import { Box, Button, Flex, Grid, Icon, Text } from "@chakra-ui/core";
+import { useSelector, useDispatch } from "react-redux";
+import { setQuestionNumber } from "../actions/quizActions";
+import { Box, Button, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/core";
 
 const Quiz = () => {
+  const { questionNumber } = useSelector((state) => state.quiz);
+  const dispatch = useDispatch();
   let [questions, setQuestions] = useState();
-  let [number, setNumber] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,14 +17,15 @@ const Quiz = () => {
     };
     fetchData();
   }, []);
+
   const nextQuestion = () => {
-    if (number < questions.length - 1) {
-      setNumber(number + 1);
+    if (questionNumber < questions.length - 1) {
+      dispatch(setQuestionNumber(questionNumber + 1));
     }
   };
   const prevQuestion = () => {
-    if (number > 0) {
-      setNumber(number - 1);
+    if (questionNumber > 0) {
+      dispatch(setQuestionNumber(questionNumber - 1));
     }
   };
 
@@ -41,19 +45,25 @@ const Quiz = () => {
               <Icon name="arrow-back" />
               Previous Question
             </Button>{" "}
-            <h2>{questions[number].question}</h2>
-            <Grid templateColumns="repeat(2, 1fr)" gap={5}>
-              {questions[number].answers.map((item, i) => (
+            <Heading as="h2" fontSize="3vh" padding="5px">
+              {questions[questionNumber].question}
+            </Heading>
+            <Grid templateColumns="repeat(2, 2fr)" gap={5}>
+              {questions[questionNumber].answers.map((item, i) => (
                 <>
                   <Box
+                    as="button"
+                    rounded="md"
                     bg="teal.500"
                     width="100%"
                     color="white"
                     onClick={nextQuestion}
                     key={i}
                   >
-                    <Flex size="120px" align="center" justify="center">
-                      <Text textAlign="center">{item}</Text>
+                    <Flex size="20vh" align="center" justify="center">
+                      <Text fontSize="2vh" textAlign="center">
+                        {item}
+                      </Text>
                     </Flex>
                   </Box>
                 </>

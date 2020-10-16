@@ -12,8 +12,27 @@ const quiz = (state = intialQuizState, action) => {
         ...state,
         questionNumber: action.payload,
       };
+      break;
     default:
       return state;
+  }
+};
+
+const intialTakerState = {
+  takerName: "",
+};
+
+const taker = (state = intialTakerState, action) => {
+  switch (action.type) {
+    case types.SET_TAKER_NAME:
+      return {
+        ...state,
+        takerName: action.payload,
+      };
+      break;
+
+    default:
+      break;
   }
 };
 

@@ -9,10 +9,10 @@ const HomePage = () => {
         Login
       </Button>
       <div className="homepage-content">
-        <Heading as="h1" size="2xl">
+        <Heading as="h1" fontSize="10vh" color="white">
           Wolfson's
         </Heading>
-        <Heading as="h1" size="2xl">
+        <Heading as="h1" fontSize="10vh" color="white">
           Match Makers
         </Heading>
         <Link to="/quiz">

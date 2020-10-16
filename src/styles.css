@@ -33,7 +33,7 @@ header {
 .quizBody {
   width: 70%;
   margin: auto;
-  min-height: 40vh;
+  min-height: 70vh;
   padding: 10px;
   background-color: cornsilk;
 }
