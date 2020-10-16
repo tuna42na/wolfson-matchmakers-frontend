@@ -1,11 +1,12 @@
 import React from "react";
+import { Heading } from "@chakra-ui/core";
 import { Link } from "react-router-dom";
 
 const WolfsonHeader = () => {
   return (
     <>
       <Link to="/">
-        <h1>Wolfson Match Maker's</h1>
+        <Heading>Wolfson Match Maker's</Heading>
       </Link>
     </>
   );

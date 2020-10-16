@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
-import Answers from "./answers";
 import WolfsonHeader from "./header";
 import axios from "axios";
-import { Button } from "@chakra-ui/core";
+import { Box, Button, Flex, Grid, Icon, Text } from "@chakra-ui/core";
 
 const Quiz = () => {
   let [questions, setQuestions] = useState();
@@ -32,25 +31,38 @@ const Quiz = () => {
       <div className="quizBody">
         {questions ? (
           <>
+            <Button
+              type="text"
+              size="xs"
+              variantColor="teal"
+              // variant=""
+              onClick={prevQuestion}
+            >
+              <Icon name="arrow-back" />
+              Previous Question
+            </Button>{" "}
             <h2>{questions[number].question}</h2>
-            <div>
+            <Grid templateColumns="repeat(2, 1fr)" gap={5}>
               {questions[number].answers.map((item, i) => (
                 <>
-                  <button key={i}> {item} </button>
+                  <Box
+                    bg="teal.500"
+                    width="100%"
+                    color="white"
+                    onClick={nextQuestion}
+                    key={i}
+                  >
+                    <Flex size="120px" align="center" justify="center">
+                      <Text textAlign="center">{item}</Text>
+                    </Flex>
+                  </Box>
                 </>
               ))}
-            </div>
-            <button type="text" onClick={prevQuestion}>
-              Previous Question
-            </button>{" "}
-            <button type="text" onClick={nextQuestion}>
-              Next Question
-            </button>
+            </Grid>
           </>
         ) : (
           "Loading..."
         )}
-        {/* <Button> Chakra Test </Button> */}
       </div>
     </div>
   );

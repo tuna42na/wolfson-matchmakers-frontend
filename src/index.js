@@ -1,4 +1,5 @@
 import React from "react";
+import { CSSReset, ThemeProvider } from "@chakra-ui/core";
 import { BrowserRouter } from "react-router-dom";
 import ReactDOM from "react-dom";
 
@@ -8,7 +9,10 @@ import "./styles.css";
 
 ReactDOM.render(
   <BrowserRouter>
-    <App />
+    <ThemeProvider>
+      <CSSReset />
+      <App />
+    </ThemeProvider>
   </BrowserRouter>,
   document.getElementById("app")
 );

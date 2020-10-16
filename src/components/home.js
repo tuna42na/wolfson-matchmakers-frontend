@@ -10,10 +10,16 @@ const HomePage = () => {
       </Button>
       <div className="homepage-content">
         <Heading as="h1" size="2xl">
-          Wolfson's Match Makers
+          Wolfson's
+        </Heading>
+        <Heading as="h1" size="2xl">
+          Match Makers
         </Heading>
         <Link to="/quiz">
-          <Button variantColor="teal">Take the Quiz</Button>
+          <Button variantColor="teal" variant="outline" size="lg">
+            {" "}
+            Quiz
+          </Button>
         </Link>
       </div>
     </div>
