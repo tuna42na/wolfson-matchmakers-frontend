@@ -30,10 +30,15 @@ header {
 }
 
 /* Quiz Styles */
+.quiz-header {
+  height: 20vh;
+  padding: 20px 40px;
+}
+
 .quizBody {
   width: 70%;
   margin: auto;
-  min-height: 70vh;
+  min-height: auto;
   padding: 10px;
   background-color: cornsilk;
 }

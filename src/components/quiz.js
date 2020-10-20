@@ -9,6 +9,7 @@ const Quiz = () => {
   const { questionNumber } = useSelector((state) => state.quiz);
   const dispatch = useDispatch();
   let [questions, setQuestions] = useState();
+  let [takersAnswers, setTakersAnswers] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,11 +19,17 @@ const Quiz = () => {
     fetchData();
   }, []);
 
-  const nextQuestion = () => {
-    if (questionNumber < questions.length - 1) {
-      dispatch(setQuestionNumber(questionNumber + 1));
-    }
+  // Function for each Answer Selection
+  const nextQuestion = (key) => {
+    let q = questionNumber;
+    let addAnswer = takersAnswers;
+    addAnswer[q] = key;
+    setTakersAnswers(addAnswer);
+    console.log(takersAnswers);
+    dispatch(setQuestionNumber(questionNumber + 1));
   };
+
+  // Button To Go Back a Question
   const prevQuestion = () => {
     if (questionNumber > 0) {
       dispatch(setQuestionNumber(questionNumber - 1));
@@ -39,7 +46,7 @@ const Quiz = () => {
               type="text"
               size="xs"
               variantColor="teal"
-              // variant=""
+              variant="ghost"
               onClick={prevQuestion}
             >
               <Icon name="arrow-back" />
@@ -57,11 +64,11 @@ const Quiz = () => {
                     bg="teal.500"
                     width="100%"
                     color="white"
-                    onClick={nextQuestion}
+                    onClick={() => nextQuestion(i)}
                     key={i}
                   >
-                    <Flex size="20vh" align="center" justify="center">
-                      <Text fontSize="2vh" textAlign="center">
+                    <Flex key={i} size="20vh" align="center" justify="center">
+                      <Text key={i} fontSize="2vh" textAlign="center">
                         {item}
                       </Text>
                     </Flex>

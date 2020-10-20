@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 const WolfsonHeader = () => {
   const { questionNumber } = useSelector((state) => state.quiz);
   let progress = (questionNumber / 7) * 100;
-  console.log(progress);
+
   return (
     <>
-      <Grid templateColumns="2">
+      <Grid className="quiz-header">
         <Box align="center">
           <Link to="/">
             <Heading as="h1" fontSize="7vh">
