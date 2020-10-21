@@ -1,10 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Permanent+Marker");
+
 header {
   text-align: center;
   font-size: 40px;
   color: white;
   background-color: tomato;
+  font-family: "Permanent Marker";
 }
 
+#header-font {
+  font-family: "Permanent Marker";
+}
 .container {
   width: 75%;
   margin: auto;
@@ -39,11 +45,33 @@ header {
   width: 70%;
   margin: auto;
   min-height: auto;
-  padding: 10px;
+  padding: 20px;
   background-color: cornsilk;
 }
 .question-grid {
   display: grid;
   justify-content: space-evenly;
   grid-template-columns: auto auto;
+}
+
+.question-animation-enter {
+  opacity: 0;
+  transition: 1000ms all ease;
+}
+
+.question-animation-enter-active {
+  opacity: 1;
+  transition: 500ms all ease;
+  transform: rotateX(360deg);
+}
+
+.question-animation-leave {
+  opacity: 1;
+  transition: 500ms all;
+}
+
+.question-animation-leave-active {
+  opacity: 0;
+  transition: 500ms all;
+  transform: translateX(20px);
 }

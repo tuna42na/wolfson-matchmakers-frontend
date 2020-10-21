@@ -3,6 +3,8 @@ import { combineReducers } from "redux";
 
 const intialQuizState = {
   questionNumber: 0,
+  questions: [{ id: "1000", question: "Loading...", answers: ["Loading..."] }],
+  takerAnswers: [],
 };
 
 const quiz = (state = intialQuizState, action) => {
@@ -12,7 +14,16 @@ const quiz = (state = intialQuizState, action) => {
         ...state,
         questionNumber: action.payload,
       };
-      break;
+    case types.SET_QUESTIONS:
+      return {
+        ...state,
+        questions: action.payload,
+      };
+    case types.SET_TAKER_ANSWERS:
+      return {
+        ...state,
+        takerAnswers: action.payload,
+      };
     default:
       return state;
   }

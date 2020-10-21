@@ -1,0 +1,30 @@
+[
+  {
+    "name": "person1",
+    "gender": "male",
+    "preference": "female",
+    "grade": "11",
+    "answers": ["1", "2", "3", "1", "4", "1", "2", "3", "1", "4"]
+  },
+  {
+    "name": "person2",
+    "gender": "male",
+    "preference": "female",
+    "grade": "11",
+    "answers": ["1", "2", "3", "1", "4", "1", "2", "3", "1", "4"]
+  },
+  {
+    "name": "person3",
+    "gender": "female",
+    "preference": "male",
+    "grade": "11",
+    "answers": ["1", "2", "3", "1", "4", "1", "2", "3", "1", "4"]
+  },
+  {
+    "name": "person4",
+    "gender": "female",
+    "preference": "male",
+    "grade": "11",
+    "answers": ["1", "2", "3", "1", "4", "1", "2", "3", "1", "4"]
+  }
+]

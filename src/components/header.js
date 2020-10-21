@@ -12,8 +12,8 @@ const WolfsonHeader = () => {
       <Grid className="quiz-header">
         <Box align="center">
           <Link to="/">
-            <Heading as="h1" fontSize="7vh">
-              Wolfson Match Maker's
+            <Heading id="header-font" as="h1" fontSize="7vh">
+              Wolfson Match Makers
             </Heading>
           </Link>
         </Box>
