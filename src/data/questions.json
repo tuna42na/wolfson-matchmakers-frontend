@@ -2,6 +2,7 @@
   {
     "id": "0",
     "question": "What is your favorite show to watch on Netflix?",
+    "answered": false,
     "answers": [
       "Stranger Things",
       "On My Block",
@@ -12,6 +13,7 @@
   {
     "id": "1",
     "question": "What is your favorite school break?",
+    "answered": false,
     "answers": [
       "Winter Break",
       "Spring Break",
@@ -22,6 +24,7 @@
   {
     "id": "2",
     "question": "If you could go anywhere on vacation, where would you visit?",
+    "answered": false,
     "answers": [
       "A historical landmark",
       "The mountains",
@@ -32,6 +35,7 @@
   {
     "id": "3",
     "question": "What is your preferred method for completing Achieve 3000 activities each quarter?",
+    "answered": false,
     "answers": [
       "I do two a week until they are all complete",
       "I do one the first week of the quarter and the rest at the end of the quarter",
@@ -42,16 +46,19 @@
   {
     "id": "4",
     "question": "What do you find least attractive in a person?",
+    "answered": false,
     "answers": ["Bad manners", "Bad hygiene", "Overconfidence", "Laziness"]
   },
   {
     "id": "5",
     "question": "What is your favorite clothing accessory?",
+    "answered": false,
     "answers": ["Hats", "Shoes", "Socks", "Scarves"]
   },
   {
     "id": "6",
     "question": "What is the best hotdog topping?",
+    "answered": false,
     "answers": ["Ketchup", "Mustard", "Other", "None"]
   }
 ]

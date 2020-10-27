@@ -1,4 +1,5 @@
 import React from "react";
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 import { Heading } from "@chakra-ui/core";
 
 const Matches = () => {
@@ -7,7 +8,7 @@ const Matches = () => {
       <Heading id="header-font" as="h1" fontSize="7vh">
         Matches for "Your Name"
       </Heading>
-      <div> Coming Soon! </div>
+      <button> Coming Soon! </button>
     </>
   );
 };

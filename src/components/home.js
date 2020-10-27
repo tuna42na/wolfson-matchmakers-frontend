@@ -9,7 +9,13 @@ const HomePage = () => {
         Login
       </Button>
       <div className="homepage-content">
-        <Heading id="header-font" as="h1" fontSize="10vh" color="white">
+        <Heading
+          id="header-font"
+          as="h1"
+          fontSize="10vh"
+          color="white"
+          textShadow="-6px -4px 7px #00000054"
+        >
           Wolfson's
           <br />
           Match Makers

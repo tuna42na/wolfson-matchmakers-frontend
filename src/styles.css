@@ -11,6 +11,7 @@ header {
 #header-font {
   font-family: "Permanent Marker";
 }
+
 .container {
   width: 75%;
   margin: auto;
@@ -57,21 +58,24 @@ header {
 .question-animation-enter {
   opacity: 0;
   transition: 1000ms all ease;
+  transform: translateX(-100%);
 }
 
 .question-animation-enter-active {
   opacity: 1;
-  transition: 500ms all ease;
-  transform: rotateX(360deg);
+  transition: 1000ms all ease;
+  transform: translateX(0%);
 }
 
 .question-animation-leave {
   opacity: 1;
   transition: 500ms all;
+  transform: translateX(0%);
 }
 
 .question-animation-leave-active {
   opacity: 0;
   transition: 500ms all;
-  transform: translateX(20px);
+
+  transform: translateX(100%);
 }
