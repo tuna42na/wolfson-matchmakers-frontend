@@ -1,9 +1,4 @@
-import React, { useEffect, useState } from "react";
-import {
-  TransitionGroup,
-  CSSTransition,
-  SwitchTransition,
-} from "react-transition-group";
+import React, { useEffect } from "react";
 import WolfsonHeader from "./header";
 import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
@@ -16,12 +11,10 @@ import { Box, Button, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/core";
 import ReviewAnswers from "./reviewAnswers";
 
 const Quiz = () => {
-  const { questions, takerAnswers } = useSelector((state) => state.quiz);
+  const { questions, takerAnswers, questionNumber } = useSelector(
+    (state) => state.quiz
+  );
   const dispatch = useDispatch();
-
-  // CSS Transition State
-  const [questionNumber, setQuestionNumber] = useState(0);
-  const [change, setChange] = useState(false);
 
   // Axios Loads for Questions
   useEffect(() => {
@@ -36,12 +29,9 @@ const Quiz = () => {
   const nextQuestion = (key) => {
     let q = questionNumber;
     let addAnswer = takerAnswers;
-    addAnswer[q] = key;
-    setChange(true);
-    console.log(change);
+    addAnswer[q] = key + 1;
     dispatch(setTakerAnswers(addAnswer));
     dispatch(setQuestionNumber(questionNumber + 1));
-    setTimeout(() => setChange(false), 1000);
   };
 
   // Button To Go Back a Question
@@ -87,32 +77,26 @@ const Quiz = () => {
             </Heading>
             <Grid templateColumns="repeat(2, 2fr)" gap={5}>
               {questions[questionNumber].answers.map((item, i) => (
-                <CSSTransition
-                  in={change}
-                  timeout={300}
-                  classNames="question-animation"
+                <Box
+                  as="button"
+                  rounded="md"
+                  bg="blue.500"
+                  width="100%"
+                  color="white"
+                  onClick={() => nextQuestion(i)}
+                  key={i}
                 >
-                  <Box
-                    as="button"
-                    rounded="md"
-                    bg="blue.500"
-                    width="100%"
-                    color="white"
-                    onClick={() => nextQuestion(i)}
-                    key={i}
-                  >
-                    <Flex key={i} h="20vh" align="center" justify="center">
-                      <Text
-                        key={i}
-                        fontSize="2vh"
-                        fontWeight="bold"
-                        textAlign="center"
-                      >
-                        {item}
-                      </Text>
-                    </Flex>
-                  </Box>
-                </CSSTransition>
+                  <Flex key={i} h="20vh" align="center" justify="center">
+                    <Text
+                      key={i}
+                      fontSize="2vh"
+                      fontWeight="bold"
+                      textAlign="center"
+                    >
+                      {item}
+                    </Text>
+                  </Flex>
+                </Box>
               ))}
             </Grid>
           </>
