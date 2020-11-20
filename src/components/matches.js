@@ -4,6 +4,8 @@ import { Heading } from "@chakra-ui/core";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import TopTen from "./topTen";
+import { Result } from "antd";
+import BottomTen from "./bottomTen";
 
 const Matches = () => {
   const { students } = useSelector((state) => state.students);
@@ -14,16 +16,15 @@ const Matches = () => {
   // Set Up the Students
   useEffect(() => {
     const fetchPeople = async () => {
-      const students = await axios("src/data/people.json");
-      dispatch(setStudents(students.data));
+      const students = await axios("src/data/people.json").then(function (
+        students
+      ) {
+        dispatch(setStudents(students.data));
+        compare(students.data);
+      });
     };
     fetchPeople();
   }, []);
-
-  // Compare Students to Current Results
-  const generateMatches = () => {
-    compare(students);
-  };
 
   // Comparison Function
   const compare = (list) => {
@@ -34,9 +35,9 @@ const Matches = () => {
           matchCount++;
         }
       }
+      let percentage = (matchCount / person.answers.length) * 100;
       let updateMatches = matches;
-
-      updateMatches.push({ name: person.name, matches: matchCount });
+      updateMatches.push({ name: person.name, match: percentage });
       setMatches([...updateMatches]);
     });
   };
@@ -46,10 +47,17 @@ const Matches = () => {
       <Heading id="header-font" as="h1" fontSize="7vh">
         Matches for "Your Name"
       </Heading>
-      <div>
-        <button onClick={() => generateMatches()}> Get Results </button>
+      <div className="quizBody">
         <br />
-        <TopTen matches={matches} />
+        {matches ? (
+          <div>
+            <TopTen matches={matches} />
+
+            <BottomTen matches={matches} />
+          </div>
+        ) : (
+          <p>Loading</p>
+        )}
       </div>
     </>
   );

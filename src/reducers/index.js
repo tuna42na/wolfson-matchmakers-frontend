@@ -49,6 +49,7 @@ const students = (state = initialStudentState, action) => {
   }
 };
 
+// Taker Profile
 const intialTakerState = {
   takerName: "",
 };

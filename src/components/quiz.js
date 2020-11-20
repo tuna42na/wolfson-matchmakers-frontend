@@ -29,7 +29,7 @@ const Quiz = () => {
   const nextQuestion = (key) => {
     let q = questionNumber;
     let addAnswer = takerAnswers;
-    addAnswer[q] = key + 1;
+    addAnswer[q] = key;
     dispatch(setTakerAnswers(addAnswer));
     dispatch(setQuestionNumber(questionNumber + 1));
   };

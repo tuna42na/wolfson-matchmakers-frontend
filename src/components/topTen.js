@@ -1,18 +1,51 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {
+  Box,
+  Button,
+  Flex,
+  Grid,
+  Heading,
+  Icon,
+  List,
+  ListItem,
+  ListIcon,
+  Text,
+} from "@chakra-ui/core";
 
 const TopTen = (props) => {
-  console.log(props.matches);
+  const [topTenMatches, setTopTenMatches] = useState([]);
+
+  useEffect(() => {
+    topTen();
+  }, [props.matches]);
+
+  // Sort Matches
+  const topTen = () => {
+    let topMatches = props.matches.slice();
+    topMatches.sort((a, b) => {
+      return b.match - a.match;
+    });
+    setTopTenMatches(topMatches);
+  };
 
   return (
-    <ul>
-      {props.matches.map((item, i) => (
-        <li>
-          <span key={i}>{item.name}</span>
-          {"  "}
-          <span key={i}>{item.matches}</span>
-        </li>
-      ))}
-    </ul>
+    <div>
+      <Heading> Top Matches </Heading>
+      {topTenMatches ? (
+        <List>
+          {topTenMatches.map((top, i) => (
+            <ListItem key={i}>
+              <ListIcon icon="check-circle" color="green.500" />
+              <span>
+                {top.name} : {top.match} %
+              </span>
+            </ListItem>
+          ))}
+        </List>
+      ) : (
+        <p>loading...</p>
+      )}
+    </div>
   );
 };
 
