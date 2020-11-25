@@ -9,19 +9,19 @@ const ReviewAnswers = () => {
   return (
     <>
       <Heading> Congrats! Here are your Responses </Heading>
-      <div>
+      <List>
         {questions.map((item, i) => (
-          <List>
+          <div key={i}>
             <ListItem>
               {i + 1} : {item.question}
             </ListItem>
             <ListItem fontWeight="bold">
               <ListIcon icon="check-circle" color="blue.500" />
-              {item.answers[takerAnswers[i]]}{" "}
+              {item.answers[takerAnswers[i]]}
             </ListItem>
-          </List>
+          </div>
         ))}
-      </div>
+      </List>
 
       <Link to="/matches">
         <Button variant="ghost" variantColor="red">

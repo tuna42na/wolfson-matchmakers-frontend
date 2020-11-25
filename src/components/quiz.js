@@ -7,6 +7,7 @@ import {
   setQuestions,
   setTakerAnswers,
 } from "../actions/quizActions";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
 import { Box, Button, Flex, Grid, Heading, Icon, Text } from "@chakra-ui/core";
 import ReviewAnswers from "./reviewAnswers";
 
@@ -72,33 +73,43 @@ const Quiz = () => {
               <Icon name="arrow-back" />
               Previous Question
             </Button>{" "}
-            <Heading as="h2" fontSize="3vh" padding="5px">
+            <Heading as="h2" fontSize="3vh" lineHeight="5vh" padding="5px">
               {questions[questionNumber].question}
             </Heading>
-            <Grid templateColumns="repeat(2, 2fr)" gap={5}>
+            {/* <Grid templateColumns="repeat(2, 2fr)" gap={5}> */}
+            <TransitionGroup className="question-grid">
               {questions[questionNumber].answers.map((item, i) => (
-                <Box
-                  as="button"
-                  rounded="md"
-                  bg="blue.500"
-                  width="100%"
-                  color="white"
-                  onClick={() => nextQuestion(i)}
-                  key={i}
+                <CSSTransition
+                  key={item}
+                  // in={questionNumber}
+                  timeout={1000}
+                  classNames="question-animation"
                 >
-                  <Flex key={i} h="20vh" align="center" justify="center">
-                    <Text
-                      key={i}
-                      fontSize="2vh"
-                      fontWeight="bold"
-                      textAlign="center"
-                    >
-                      {item}
-                    </Text>
-                  </Flex>
-                </Box>
+                  <Box
+                    as="button"
+                    rounded="md"
+                    bg="blue.500"
+                    width="100%"
+                    color="white"
+                    onClick={() => nextQuestion(i)}
+                    key={i}
+                    className="answer-box"
+                  >
+                    <Flex key={i} h="20vh" align="center" justify="center">
+                      <Text
+                        key={i}
+                        fontSize="2vh"
+                        fontWeight="bold"
+                        textAlign="center"
+                      >
+                        {item}
+                      </Text>
+                    </Flex>
+                  </Box>
+                </CSSTransition>
               ))}
-            </Grid>
+            </TransitionGroup>
+            {/* </Grid> */}
           </>
         )}
       </div>

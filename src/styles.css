@@ -51,31 +51,55 @@ header {
 }
 .question-grid {
   display: grid;
-  justify-content: space-evenly;
   grid-template-columns: auto auto;
+  grid-gap: 3vh;
 }
 
 .question-animation-enter {
   opacity: 0;
-  transition: 1000ms all ease;
-  transform: translateX(-100%);
+  position: relative;
+  z-index: 2;
+  left: -30px;
 }
 
 .question-animation-enter-active {
   opacity: 1;
-  transition: 1000ms all ease;
-  transform: translateX(0%);
+  left: 0px;
+  transition: all 1000ms;
 }
 
-.question-animation-leave {
-  opacity: 1;
-  transition: 500ms all;
-  transform: translateX(0%);
+.question-animation-exit {
+  display: none;
+  z-index: 0;
+  position: absolute;
 }
 
-.question-animation-leave-active {
+.question-animation-exit-active {
   opacity: 0;
-  transition: 500ms all;
+  transition: all 1000ms;
+}
+.answer-box {
+  box-shadow: 5px 5px 5px 2px #b5b5b5;
+}
 
-  transform: translateX(100%);
+/* Matches Page */
+.matchBody {
+  text-align: center;
+  width: 80%;
+  position: absolute;
+  margin: 0% 10% 0% 10%;
+  min-height: auto;
+  padding: 20px;
+  background-color: cornsilk;
+  top: 40%;
+}
+.match-view {
+  background-color: white;
+  border: 2px solid #444444;
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: 4px 4px 5px 3px #cecece;
+  text-align: center;
+  height: 30vh;
+  margin: 5px;
 }

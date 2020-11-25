@@ -1,4 +1,4 @@
-import { List, ListItem, ListIcon } from "@chakra-ui/core";
+import { Box, Heading, List, ListItem, ListIcon } from "@chakra-ui/core";
 import React, { useEffect, useState } from "react";
 
 const BottomTen = (props) => {
@@ -19,9 +19,9 @@ const BottomTen = (props) => {
   };
 
   return (
-    <div>
+    <Box w="80%">
       {bottomTenMatches ? (
-        <List>
+        <List className="match-view">
           {bottomTenMatches.map((bottom, i) => (
             <ListItem key={i}>
               <ListIcon icon="delete" color="red.500" />
@@ -32,7 +32,8 @@ const BottomTen = (props) => {
       ) : (
         <p>loading...</p>
       )}
-    </div>
+      <Heading> Bottom Matches </Heading>
+    </Box>
   );
 };
 

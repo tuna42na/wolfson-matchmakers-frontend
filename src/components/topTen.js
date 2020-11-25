@@ -1,16 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Box,
-  Button,
-  Flex,
-  Grid,
-  Heading,
-  Icon,
-  List,
-  ListItem,
-  ListIcon,
-  Text,
-} from "@chakra-ui/core";
+import { Heading, List, ListItem, ListIcon, Box } from "@chakra-ui/core";
 
 const TopTen = (props) => {
   const [topTenMatches, setTopTenMatches] = useState([]);
@@ -29,10 +18,10 @@ const TopTen = (props) => {
   };
 
   return (
-    <div>
+    <Box w="80%">
       <Heading> Top Matches </Heading>
       {topTenMatches ? (
-        <List>
+        <List className="match-view">
           {topTenMatches.map((top, i) => (
             <ListItem key={i}>
               <ListIcon icon="check-circle" color="green.500" />
@@ -45,7 +34,7 @@ const TopTen = (props) => {
       ) : (
         <p>loading...</p>
       )}
-    </div>
+    </Box>
   );
 };
 

@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { setStudents } from "../actions/matchesActions";
-import { Heading } from "@chakra-ui/core";
+import { Box, Flex, Grid, Heading } from "@chakra-ui/core";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import TopTen from "./topTen";
-import { Result } from "antd";
 import BottomTen from "./bottomTen";
 
 const Matches = () => {
@@ -44,17 +43,23 @@ const Matches = () => {
 
   return (
     <>
-      <Heading id="header-font" as="h1" fontSize="7vh">
+      <Heading className="quiz-header" id="header-font" as="h1" fontSize="7vh">
         Matches for "Your Name"
       </Heading>
-      <div className="quizBody">
-        <br />
+      <div className="matchBody">
         {matches ? (
-          <div>
-            <TopTen matches={matches} />
-
-            <BottomTen matches={matches} />
-          </div>
+          <Grid templateColumns="repeat(2, 10fr)" gap={5}>
+            <Box w="100%">
+              <Flex h="20vh" align="center" justify="center">
+                <TopTen matches={matches} />
+              </Flex>
+            </Box>
+            <Box w="100%">
+              <Flex h="20vh" align="center" justify="center">
+                <BottomTen matches={matches} />
+              </Flex>
+            </Box>
+          </Grid>
         ) : (
           <p>Loading</p>
         )}
