@@ -8,15 +8,15 @@ const ReviewAnswers = () => {
 
   return (
     <>
-      <Heading> Congrats! Here are your Responses </Heading>
+      <Heading color="white"> Congrats! Here are your Responses </Heading>
       <List>
         {questions.map((item, i) => (
           <div key={i}>
-            <ListItem>
+            <ListItem color="white">
               {i + 1} : {item.question}
             </ListItem>
-            <ListItem fontWeight="bold">
-              <ListIcon icon="check-circle" color="blue.500" />
+            <ListItem color="white" fontWeight="bold">
+              <ListIcon icon="check-circle" color="white" />
               {item.answers[takerAnswers[i]]}
             </ListItem>
           </div>
@@ -24,10 +24,7 @@ const ReviewAnswers = () => {
       </List>
 
       <Link to="/matches">
-        <Button variant="ghost" variantColor="red">
-          {" "}
-          Let's See Your Matches{" "}
-        </Button>
+        <Button> Let's See Your Matches </Button>
       </Link>
     </>
   );

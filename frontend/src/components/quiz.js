@@ -54,8 +54,7 @@ const Quiz = () => {
               size="xs"
               variantColor="teal"
               variant="ghost"
-              onClick={prevQuestion}
-            >
+              onClick={prevQuestion}>
               <Icon name="arrow-back" />
               Previous Question
             </Button>
@@ -68,12 +67,16 @@ const Quiz = () => {
               size="xs"
               variantColor="teal"
               variant="ghost"
-              onClick={prevQuestion}
-            >
+              onClick={prevQuestion}>
               <Icon name="arrow-back" />
               Previous Question
             </Button>{" "}
-            <Heading as="h2" fontSize="3vh" lineHeight="5vh" padding="5px">
+            <Heading
+              as="h2"
+              fontSize="3vh"
+              color="white"
+              lineHeight="5vh"
+              padding="20px">
               {questions[questionNumber].question}
             </Heading>
             {/* <Grid templateColumns="repeat(2, 2fr)" gap={5}> */}
@@ -81,27 +84,22 @@ const Quiz = () => {
               {questions[questionNumber].answers.map((item, i) => (
                 <CSSTransition
                   key={item}
-                  // in={questionNumber}
-                  timeout={1000}
-                  classNames="question-animation"
-                >
+                  timeout={500}
+                  classNames="question-animation">
                   <Box
                     as="button"
-                    rounded="md"
-                    bg="blue.500"
+                    bg=" #e44949"
                     width="100%"
                     color="white"
                     onClick={() => nextQuestion(i)}
                     key={i}
-                    className="answer-box"
-                  >
+                    className="answer-box">
                     <Flex key={i} h="20vh" align="center" justify="center">
                       <Text
                         key={i}
                         fontSize="2vh"
                         fontWeight="bold"
-                        textAlign="center"
-                      >
+                        textAlign="center">
                         {item}
                       </Text>
                     </Flex>
