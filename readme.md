@@ -1,8 +1,13 @@
 # Wolfson Matchmaker's App
 
+### Description
 **Wolfson Match Makers is** a match making app for the students of Wolfson Highschool. Each student answers a questionaire and is given their after Valentine's Day
 
 ### Features
+* Axios 
+* Redux
+* Express.js
+* Chakra UI
 * Babel Library Dependancies
 * ESLint
 * React Hot-Loader
