@@ -1,7 +1,6 @@
 # Wolfson Matchmaker's App
 
-## Wolfson Match Makers is
-a match making app for the students of Wolfson Highschool. Each student answers a questionaire and is given their after Valentine's Day
+**Wolfson Match Makers is** a match making app for the students of Wolfson Highschool. Each student answers a questionaire and is given their after Valentine's Day
 
 ### Features
 * Babel Library Dependancies
