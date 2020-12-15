@@ -51,9 +51,8 @@ const Quiz = () => {
           <div>
             <Button
               type="text"
+              variantColor="red.50"
               size="xs"
-              variantColor="teal"
-              variant="ghost"
               onClick={prevQuestion}>
               <Icon name="arrow-back" />
               Previous Question
@@ -65,8 +64,7 @@ const Quiz = () => {
             <Button
               type="text"
               size="xs"
-              variantColor="teal"
-              variant="ghost"
+              variantColor="red.50"
               onClick={prevQuestion}>
               <Icon name="arrow-back" />
               Previous Question

@@ -11,11 +11,11 @@ const BottomTen = (props) => {
   // Sort Matches
   const bottomTen = () => {
     let bottomMatches = props.matches.slice();
-
     bottomMatches.sort((a, b) => {
       return a.match - b.match;
     });
-    setBottomTenMatches(bottomMatches);
+    let onlyTen = bottomMatches.slice(0, 11);
+    setBottomTenMatches(onlyTen);
   };
 
   return (
@@ -25,7 +25,7 @@ const BottomTen = (props) => {
           {bottomTenMatches.map((bottom, i) => (
             <ListItem key={i}>
               <ListIcon icon="delete" color="red.500" />
-              {bottom.name} : {bottom.match} %{" "}
+              {bottom.name} : {bottom.match}%
             </ListItem>
           ))}
         </List>

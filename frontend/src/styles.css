@@ -4,7 +4,7 @@ header {
   text-align: center;
   font-size: 40px;
   color: white;
-  background-color: tomato;
+  background-color: #e44949;
   font-family: "Permanent Marker";
 }
 
@@ -21,7 +21,7 @@ header {
 .homepage {
   height: 100vh;
   padding: 10px;
-  background-color: coral;
+  background-color: #e44949;
 }
 .homepage-content {
   position: relative;
@@ -121,6 +121,7 @@ header {
   padding: 5px;
   box-shadow: 4px 4px 5px 3px #cecece;
   text-align: center;
-  height: 30vh;
+  height: auto;
+  width: auto;
   margin: 5px;
 }

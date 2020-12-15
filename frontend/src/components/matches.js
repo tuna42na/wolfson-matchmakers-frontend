@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { setStudents } from "../actions/matchesActions";
-import { Box, Flex, Grid, Heading } from "@chakra-ui/core";
+import { Button, Box, Flex, SimpleGrid, Heading } from "@chakra-ui/core";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import TopTen from "./topTen";
@@ -25,6 +25,8 @@ const Matches = () => {
     fetchPeople();
   }, []);
 
+  // Preferences Function
+
   // Comparison Function
   const compare = (list) => {
     list.map((person) => {
@@ -34,7 +36,8 @@ const Matches = () => {
           matchCount++;
         }
       }
-      let percentage = (matchCount / person.answers.length) * 100;
+      let roughPercent = (matchCount / person.answers.length) * 100;
+      let percentage = roughPercent.toFixed(2);
       let updateMatches = matches;
       updateMatches.push({ name: person.name, match: percentage });
       setMatches([...updateMatches]);
@@ -47,8 +50,8 @@ const Matches = () => {
         Matches for "Your Name"
       </Heading>
       <div className="matchBody">
-        {matches ? (
-          <Grid templateColumns="repeat(2, 10fr)" gap={5}>
+        {students ? (
+          <SimpleGrid columns={2} spacing={0}>
             <Box w="100%">
               <Flex h="20vh" align="center" justify="center">
                 <TopTen matches={matches} />
@@ -59,9 +62,11 @@ const Matches = () => {
                 <BottomTen matches={matches} />
               </Flex>
             </Box>
-          </Grid>
+          </SimpleGrid>
         ) : (
-          <p>Loading</p>
+          <Button isLoading loadingText="Loading" colorScheme="red.600">
+            Loading
+          </Button>
         )}
       </div>
     </>

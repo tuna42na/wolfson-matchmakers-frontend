@@ -14,7 +14,8 @@ const TopTen = (props) => {
     topMatches.sort((a, b) => {
       return b.match - a.match;
     });
-    setTopTenMatches(topMatches);
+    let onlyTen = topMatches.slice(0, 11);
+    setTopTenMatches(onlyTen);
   };
 
   return (
@@ -26,7 +27,7 @@ const TopTen = (props) => {
             <ListItem key={i}>
               <ListIcon icon="check-circle" color="green.500" />
               <span>
-                {top.name} : {top.match} %
+                {top.name} : {top.match}%
               </span>
             </ListItem>
           ))}
