@@ -13,4 +13,11 @@ a match making app for the students of Wolfson Highschool. Each student answers 
 
 ### Todo list
 
-- [x] Create Quiz Element - [x] List Matches - [ ] Personal Profile - [ ] Css Transitions - [ ] Personal Authorization - [ ] Page Transitions - [ ] Set Up MongoDB - [ ] Connect MongoDB for use
+- [x] Create Quiz Element 
+- [x] List Matches
+- [ ] Personal Profile
+- [ ] Css Transitions
+- [ ] Personal Authorization 
+- [ ] Page Transitions
+- [ ] Set Up MongoDB 
+- [ ] Connect MongoDB for use
