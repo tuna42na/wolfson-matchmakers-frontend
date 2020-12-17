@@ -6,14 +6,17 @@
 ### Features
 * Axios 
 * Redux
-* Express.js
 * Chakra UI
+* React Router
 * Babel Library Dependancies
 * ESLint
 * React Hot-Loader
 * Jest
 * Prettier
 * Husky Hooks
+* Express.js
+* MongoDB
+
 
 ### Todo list
 - [x] Create Quiz Element 
@@ -22,5 +25,5 @@
 - [ ] Css Transitions
 - [ ] Personal Authorization 
 - [ ] Page Transitions
-- [ ] Set Up MongoDB 
+- [x] Set Up MongoDB 
 - [ ] Connect MongoDB for use
